@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Ideas - Expertos en Publicidad</title>
+    <!-- Importar Tailwind CSS para estilos rápidos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Importar Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Configuración de Fuentes -->
+    <style>
+        @import url('https://use.typekit.net/xyz123.css'); /* Placeholder para Remora Sans si tienes Typekit */
+        
+        @font-face {
+            font-family: 'Remora Sans W5 Demi';
+            src: local('Remora Sans W5 Demi'), local('Remora Sans Demi'), local('RemoraSans-Demi'), url('https://fonts.cdnfonts.com/s/12345/RemoraSans-Demi.woff') format('woff');
+            /* Nota: Si no tienes el archivo de fuente real, el navegador usará la fuente sans-serif por defecto */
+        }
+
+        body {
+            font-family: 'Remora Sans W5 Demi', 'Remora Sans', sans-serif;
+            background-color: #f9f4e1;
+            color: #053056;
+            overflow-x: hidden;
+        }
+
+        .btn-primary:hover {
+            background-color: #008bbd !important;
+            transform: translateY(-2px);
+        }
+
+        .animate-bounce-slow {
+            animation: bounce 3s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(-5%); }
+            50% { transform: translateY(0); }
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00adef',
+                        primaryDark: '#008bbd',
+                        secondary: '#053056',
+                        background: '#f9f4e1',
+                        white: '#FFFFFF'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased selection:bg-primary selection:text-white">
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 bg-transparent">
+        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+            <!-- LOGO -->
+            <div class="flex items-center cursor-pointer" onclick="scrollToSection('hero')">
+                <!-- Asegúrate de tener la imagen 'ABCLogo.png' en la misma carpeta que este archivo -->
+                <img src="ABCLogo.png" alt="Logotipo de ABC Ideas" class="h-12 md:h-16 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                <span style="display:none; font-weight:bold; font-size:1.5rem;">ABC Ideas</span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <button onclick="scrollToSection('hero')" class="text-sm font-medium hover:opacity-75 transition-colors text-secondary">Inicio</button>
+                <button onclick="scrollToSection('servicios')" class="text-sm font-medium hover:opacity-75 transition-colors text-secondary">Servicios</button>
+                <button onclick="scrollToSection('nosotros')" class="text-sm font-medium hover:opacity-75 transition-colors text-secondary">Nosotros</button>
+                <button onclick="scrollToSection('portafolio')" class="text-sm font-medium hover:opacity-75 transition-colors text-secondary">Portafolio</button>
+                
+                <a href="https://wa.me/573103498227?text=%C2%A1Hola!%20Quiero%20cotizar%20un%20proyecto" 
+                   target="_blank" 
+                   class="text-white px-5 py-2 rounded-full font-medium transition-all shadow-lg text-sm btn-primary bg-primary">
+                    Cotizar ahora
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden p-2 text-secondary" onclick="toggleMenu()" aria-label="Abrir menú">
+                <i data-lucide="menu" id="menuIcon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full shadow-lg border-t border-primary/10 py-6 flex flex-col items-center space-y-6 bg-background z-40">
+            <button onclick="scrollToSection('hero'); toggleMenu()" class="font-medium text-lg py-2 w-full text-center active:bg-primary/10 transition-colors text-secondary">Inicio</button>
+            <button onclick="scrollToSection('servicios'); toggleMenu()" class="font-medium text-lg py-2 w-full text-center active:bg-primary/10 transition-colors text-secondary">Servicios</button>
+            <button onclick="scrollToSection('nosotros'); toggleMenu()" class="font-medium text-lg py-2 w-full text-center active:bg-primary/10 transition-colors text-secondary">Nosotros</button>
+            <button onclick="scrollToSection('portafolio'); toggleMenu()" class="font-medium text-lg py-2 w-full text-center active:bg-primary/10 transition-colors text-secondary">Portafolio</button>
+            <button onclick="scrollToSection('contacto'); toggleMenu()" class="font-medium text-lg py-2 w-full text-center active:bg-primary/10 transition-colors text-secondary">Contacto</button>
+            
+            <a href="https://wa.me/573103498227?text=%C2%A1Hola!%20Quiero%20cotizar%20un%20proyecto" 
+               class="text-white px-8 py-3 rounded-full font-bold shadow-lg bg-primary">
+                Cotizar en WhatsApp
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative pt-28 pb-16 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Fondo -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-background to-[#eef6f9]"></div>
+            <div class="absolute top-0 right-0 w-1/2 h-full opacity-5 skew-x-12 transform origin-top-right bg-primary"></div>
+        </div>
+
+        <div class="container mx-auto px-4 md:px-6 relative z-10 flex flex-col lg:flex-row items-center">
+            <div class="lg:w-1/2 lg:pr-12 text-center lg:text-left mb-10 lg:mb-0">
+                <div class="inline-block px-4 py-1 rounded-full text-xs uppercase tracking-wide mb-6 font-bold bg-[#d0f0fd] text-secondary">
+                    Expertos en publicidad
+                </div>
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-secondary">
+                    Material que hace <br/>
+                    <span class="text-primary">visible tu marca.</span>
+                </h1>
+                <p class="text-base md:text-lg mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0 opacity-80">
+                    En ABC Ideas transformamos tu identidad corporativa en marketing directo con material de alto impacto.
+                    <br class="block my-4" /> 
+                    <span class="font-bold">Diseño que conecta, impresiona y vende.</span>
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full sm:w-auto">
+                    <button onclick="scrollToSection('servicios')" class="text-white px-8 py-4 rounded-lg font-bold text-lg shadow-xl flex items-center justify-center gap-2 group btn-primary transition-all w-full sm:w-auto bg-primary">
+                        Ver soluciones
+                        <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                    <button onclick="scrollToSection('portafolio')" class="bg-white border border-[#e5e7eb] px-8 py-4 rounded-lg font-bold text-lg shadow-sm hover:border-primary transition-all w-full sm:w-auto text-secondary">
+                        Nuestro trabajo
+                    </button>
+                </div>
+                
+                <!-- Prueba Social -->
+                <div class="mt-10 flex items-center justify-center lg:justify-start gap-4 text-sm opacity-70">
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-background"></div>
+                        <div class="w-8 h-8 rounded-full bg-gray-400 border-2 border-background"></div>
+                        <div class="w-8 h-8 rounded-full bg-gray-500 border-2 border-background"></div>
+                    </div>
+                    <p>Confianza de más de 50 marcas locales.</p>
+                </div>
+            </div>
+            
+            <!-- Imagen Hero -->
+            <div class="lg:w-1/2 w-full relative px-4 sm:px-0">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-white border-4 md:border-8 border-white transform rotate-1 md:rotate-2 hover:rotate-0 transition-transform duration-500">
+                    <!-- Asegúrate de tener la imagen 'corporativaabc.png' -->
+                    <img src="corporativaabc.png" alt="Material publicitario y papelería de calidad" class="w-full h-auto object-cover" onerror="this.src='https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&q=80&w=1000'">
+                    <div class="absolute bottom-0 left-0 bg-white/90 backdrop-blur-sm p-3 md:p-4 w-full">
+                        <p class="font-bold text-sm md:text-base text-secondary">Calidad premium</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="servicios" class="py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12 md:mb-16 max-w-2xl mx-auto">
+                <h2 class="font-bold tracking-widest uppercase text-xs md:text-sm mb-2 text-primary">Lo que hacemos</h2>
+                <h3 class="text-2xl md:text-4xl font-bold mb-4 text-secondary">Todo lo que tu empresa necesita para destacar</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <!-- Servicio 1 -->
+                <div class="p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group bg-white border border-gray-100">
+                    <div class="mb-6 w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center transition-colors bg-[#e0f7ff]">
+                        <i data-lucide="layout" class="text-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 text-secondary">Material POP y promocional</h3>
+                    <div class="mb-6 leading-relaxed opacity-70 text-sm md:text-base">
+                        <span>Objetos que llevan tu marca a todas partes.<br class="block mt-2" />Fideliza a tus clientes con obsequios útiles y de alto impacto visual.</span>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-xs md:text-sm opacity-80"><i data-lucide="check-circle" class="text-primary w-4 h-4"></i> Agendas y esferos</li>
+                        <li class="flex items-center gap-2 text-xs md:text-sm opacity-80"><i data-lucide="check-circle" class="text-primary w-4 h-4"></i> Mugs y llaveros</li>
+                        <li class="flex items-center gap-2 text-xs md:text-sm opacity-80"><i data-lucide="check-circle" class="text-primary w-4 h-4"></i> Kits publicitarios</li>
+                        <li class="flex items-center gap-2 text-xs md:text-sm opacity-80"><i data-lucide="check-circle" class="text-primary w-4 h-4"></i> Merchandising</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group bg-white border border-gray-100">
+                    <div class="mb-6 w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center transition-colors bg-[#e0f7ff]">
+                        <i data-lucide="printer" class="text-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 text-secondary">Impresión gran formato y avisos</h3>
+                    <div class="mb-6 leading-relaxed opacity-70 text-sm md:text-base">
+                        <span>Hazte notar desde lejos.<br class="block mt-2" />Soluciones visuales a gran escala para fachadas, vitrinas y empaques que atraen miradas.</span>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-xs md:text-sm opacity-80"><i data-lucide="check-circle" class="text-primary w-4 h-4"></i> Avisos en acrílico y lona</li>
+                        <li class="flex items-center gap-2 text-xs md:text-sm opacity-80"><i data-lucide="check-circle" class="text-primary w-4 h-4"></i> Vinilos decorativos</li>
+                        <li class="flex items-center gap-2 text-xs md:text-sm opacity-80"><i data-lucide="check-circle" class="text-primary w-4 h-4"></i> Cajas y etiquetas</li>
+                        <li class="flex items-center gap-2 text-xs md:text-sm opacity-80"><i data-lucide="check-circle" class="text-primary w-4 h-4"></i> Branding de espacios</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group bg-white border border-gray-100">
+                    <div class="mb-6 w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center transition-colors bg-[#e0f7ff]">
+                        <i data-lucide="pen-tool" class="text-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 text-secondary">Papelería corporativa (operativa)</h3>
+                    <div class="mb-6 leading-relaxed opacity-70 text-sm md:text-base">
+                        Formaliza tus procesos. Documentación funcional que refleja orden y profesionalismo en cada transacción comercial.
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-xs md:text-sm opacity-80"><i data-lucide="check-circle" class="text-primary w-4 h-4"></i> Facturas y recibos</li>
+                        <li class="flex items-center gap-2 text-xs md:text-sm opacity-80"><i data-lucide="check-circle" class="text-primary w-4 h-4"></i> Órdenes de trabajo</li>
+                        <li class="flex items-center gap-2 text-xs md:text-sm opacity-80"><i data-lucide="check-circle" class="text-primary w-4 h-4"></i> Órdenes de compra</li>
+                        <li class="flex items-center gap-2 text-xs md:text-sm opacity-80"><i data-lucide="check-circle" class="text-primary w-4 h-4"></i> Papelería interna</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group bg-white border border-gray-100">
+                    <div class="mb-6 w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center transition-colors bg-[#e0f7ff]">
+                        <i data-lucide="megaphone" class="text-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 text-secondary">Experiencias BTL</h3>
+                    <div class="mb-6 leading-relaxed opacity-70 text-sm md:text-base">
+                        <span>Crea momentos inolvidables.<br class="block mt-2" />Diseñamos activaciones que rompen la rutina y conectan emocionalmente con tu audiencia.</span>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-xs md:text-sm opacity-80"><i data-lucide="check-circle" class="text-primary w-4 h-4"></i> Activaciones de marca</li>
+                        <li class="flex items-center gap-2 text-xs md:text-sm opacity-80"><i data-lucide="check-circle" class="text-primary w-4 h-4"></i> Stands para eventos</li>
+                        <li class="flex items-center gap-2 text-xs md:text-sm opacity-80"><i data-lucide="check-circle" class="text-primary w-4 h-4"></i> Logística promocional</li>
+                        <li class="flex items-center gap-2 text-xs md:text-sm opacity-80"><i data-lucide="check-circle" class="text-primary w-4 h-4"></i> Diseño de experiencias</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="nosotros" class="py-16 md:py-20 bg-background">
+        <div class="container mx-auto px-4 md:px-6">
+            
+            <div class="flex flex-col md:flex-row items-center gap-10 md:gap-12 mb-16 md:mb-20">
+                <div class="w-full md:w-1/2">
+                    <!-- Asegúrate de tener la imagen 'equipoabc.png' -->
+                   <img src="equipoabc.png" alt="Equipo ABC Ideas" class="rounded-2xl shadow-lg w-full h-auto object-cover" onerror="this.src='https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600'">
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-secondary">30 años de legado visual en Colombia</h2>
+                    <p class="mb-6 leading-relaxed opacity-80 text-sm md:text-base">
+                        Somos una <strong>empresa fundada en Bogotá en 1993</strong>. Con tres décadas de experiencia, nos hemos consolidado como el socio estratégico que conecta a las empresas con sus clientes target a través de soluciones innovadoras.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 gap-3">
+                        <div class="flex items-start gap-3">
+                            <div class="w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 bg-[#e0f7ff]">
+                                <i data-lucide="check-circle" class="text-primary w-3.5 h-3.5"></i>
+                            </div>
+                            <span class="font-medium opacity-90 text-sm md:text-base">Legado: +30 años anticipando necesidades del mercado.</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 bg-[#e0f7ff]">
+                                <i data-lucide="check-circle" class="text-primary w-3.5 h-3.5"></i>
+                            </div>
+                            <span class="font-medium opacity-90 text-sm md:text-base">Cumplimiento: Garantía desde el concepto hasta la entrega.</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 bg-[#e0f7ff]">
+                                <i data-lucide="check-circle" class="text-primary w-3.5 h-3.5"></i>
+                            </div>
+                            <span class="font-medium opacity-90 text-sm md:text-base">Calidad y conexión: Ejecución detallada con enfoque humano.</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 bg-[#e0f7ff]">
+                                <i data-lucide="check-circle" class="text-primary w-3.5 h-3.5"></i>
+                            </div>
+                            <span class="font-medium opacity-90 text-sm md:text-base">Innovación: Exploración continua de nuevas tecnologías.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 pt-8 border-t border-gray-300">
+                        <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-primary">
+                            <p class="text-xs md:text-sm font-medium italic opacity-90">
+                                "Tu socio estratégico que garantiza calidad y cumplimiento, respaldado por un enfoque consultivo."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTACTO INTEGRADO -->
+            <div id="contacto" class="bg-white rounded-3xl shadow-lg p-6 md:p-10 border border-gray-100">
+                <h3 class="text-xl md:text-2xl font-bold text-center mb-8 text-secondary">Encuéntranos aquí</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                    <!-- Ubicación -->
+                    <a href="https://maps.app.goo.gl/JAPEETGFnNZt8MFA7" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center text-center p-6 rounded-2xl bg-[#f9f4e1] hover:-translate-y-1 transition-transform duration-300 cursor-pointer group">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 text-white shadow-md group-hover:bg-[#008bbd] transition-colors bg-primary">
+                            <i data-lucide="map-pin" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2 text-secondary">Ubicación</h4>
+                        <p class="opacity-80 text-sm group-hover:text-primary transition-colors">Carrera 9 #9-71, Bogotá</p>
+                    </a>
+
+                    <!-- Correo -->
+                    <a href="mailto:abcideas72@gmail.com" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center text-center p-6 rounded-2xl bg-[#f9f4e1] hover:-translate-y-1 transition-transform duration-300 cursor-pointer group">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 text-white shadow-md group-hover:bg-[#008bbd] transition-colors bg-primary">
+                            <i data-lucide="mail" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2 text-secondary">Correo electrónico</h4>
+                        <p class="opacity-80 text-sm group-hover:text-primary transition-colors break-all">abcideas72@gmail.com</p>
+                    </a>
+
+                    <!-- Redes Sociales -->
+                    <div class="flex flex-col items-center text-center p-6 rounded-2xl bg-[#f9f4e1] hover:-translate-y-1 transition-transform duration-300">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 text-white shadow-md bg-primary">
+                            <i data-lucide="share-2" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-4 text-secondary">Redes sociales</h4>
+                        <div class="flex justify-center gap-3">
+                            <a href="https://www.linkedin.com/company/abc-ideas/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="p-2 bg-white rounded-full hover:text-primary hover:shadow-md transition-all text-gray-600" title="LinkedIn">
+                                <i data-lucide="linkedin" class="w-5 h-5"></i>
+                            </a>
+                            <a href="https://www.instagram.com/abcideas.publicidad?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="p-2 bg-white rounded-full hover:text-primary hover:shadow-md transition-all text-gray-600" title="Instagram">
+                                <i data-lucide="instagram" class="w-5 h-5"></i>
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=61584008057301" target="_blank" rel="noopener noreferrer" class="p-2 bg-white rounded-full hover:text-primary hover:shadow-md transition-all text-gray-600" title="Facebook">
+                                <i data-lucide="facebook" class="w-5 h-5"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@abc.ideas" target="_blank" rel="noopener noreferrer" class="p-2 bg-white rounded-full hover:text-primary hover:shadow-md transition-all text-gray-600" title="TikTok">
+                                <!-- TikTok Icon SVG manual para Lucide -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PORTFOLIO BANNER -->
+    <section id="portafolio" class="py-16 md:py-24 text-white relative overflow-hidden bg-secondary">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="container mx-auto px-4 md:px-6 text-center relative z-10">
+            <h2 class="text-2xl md:text-3xl lg:text-5xl font-bold mb-4 md:mb-6">Nuestros resultados hablan</h2>
+            <p class="max-w-2xl mx-auto mb-8 md:mb-10 text-base md:text-lg opacity-80 text-background">
+                Hemos ayudado a decenas de empresas a mejorar su presencia física con material de alta calidad.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 max-w-4xl mx-auto">
+                <div class="p-2 md:p-4">
+                    <div class="text-2xl md:text-3xl lg:text-4xl font-bold mb-1 text-primary">+500</div>
+                    <div class="text-xs uppercase tracking-wider opacity-70">Proyectos</div>
+                </div>
+                <div class="p-2 md:p-4">
+                    <div class="text-2xl md:text-3xl lg:text-4xl font-bold mb-1 text-primary">98%</div>
+                    <div class="text-xs uppercase tracking-wider opacity-70">Clientes</div>
+                </div>
+                <div class="p-2 md:p-4">
+                    <div class="text-2xl md:text-3xl lg:text-4xl font-bold mb-1 text-primary">30+</div>
+                    <div class="text-xs uppercase tracking-wider opacity-70">Años exp.</div>
+                </div>
+                <div class="p-2 md:p-4">
+                    <div class="text-2xl md:text-3xl lg:text-4xl font-bold mb-1 text-primary">24h</div>
+                    <div class="text-xs uppercase tracking-wider opacity-70">Respuesta</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-gray-400 py-10 md:py-12 border-t border-gray-800 bg-[#031d36]"> 
+        <div class="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="mb-6 md:mb-0">
+                <div class="flex items-center justify-center md:justify-start gap-2 mb-2">
+                    <img src="ABCLogo.png" alt="Logotipo de ABC Ideas" class="h-8 md:h-10 w-auto opacity-100" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <span style="display:none; font-weight:bold; color:white;">ABC Ideas</span>
+                </div>
+                <p class="text-xs md:text-sm">© 2024 ABC Ideas. Todos los derechos reservados.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm">
+                <a href="#" class="hover:text-white transition">Términos</a>
+                <a href="#" class="hover:text-white transition">Privacidad</a>
+                <a href="#" class="hover:text-white transition">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts para funcionalidad -->
+    <script>
+        // Inicializar Iconos Lucide
+        lucide.createIcons();
+
+        // Funcionalidad del Navbar (Scroll effect)
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-background', 'shadow-md', 'py-2');
+                navbar.classList.remove('bg-transparent', 'py-4');
+            } else {
+                navbar.classList.remove('bg-background', 'shadow-md', 'py-2');
+                navbar.classList.add('bg-transparent', 'py-4');
+            }
+        });
+
+        // Funcionalidad del Menú Móvil
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.setAttribute('data-lucide', 'x');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons(); // Re-renderizar iconos al cambiar
+        }
+
+        // Scroll Suave
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
