@@ -70,13 +70,14 @@
 <body class="antialiased selection:bg-primary selection:text-white">
 
     <!-- NAVBAR -->
+    <!-- Se agrega transition-colors para que el cambio de fondo sea suave -->
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 bg-transparent">
         <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
             <!-- LOGO -->
             <div class="flex items-center cursor-pointer" onclick="scrollToSection('hero')">
                 <!-- Asegúrate de tener la imagen 'ABCLogo.png' en la misma carpeta -->
                 <img src="ABCLogo.png" alt="Logotipo de ABC Ideas" class="h-12 md:h-16 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-                <span style="display:none; font-weight:bold; font-size:1.5rem; color: #053056;">ABC Ideas</span>
+                <span style="display:none; font-weight:bold; font-size:1.5rem; color: #053056;" id="fallbackLogoText">ABC Ideas</span>
             </div>
 
             <!-- Desktop Menu -->
@@ -94,18 +95,19 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <button class="md:hidden p-2 text-secondary" onclick="toggleMenu()" aria-label="Abrir menú" id="mobileMenuButton">
+            <button class="md:hidden p-2 text-secondary transition-colors" onclick="toggleMenu()" aria-label="Abrir menú" id="mobileMenuButton">
                 <i data-lucide="menu" id="menuIcon"></i>
             </button>
         </div>
 
         <!-- Mobile Menu Dropdown -->
-        <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full shadow-lg border-t border-primary/10 py-6 flex flex-col items-center space-y-6 bg-background z-40">
-            <button onclick="scrollToSection('hero'); toggleMenu()" class="font-medium text-lg py-2 w-full text-center active:bg-primary/10 transition-colors text-secondary">Inicio</button>
-            <button onclick="scrollToSection('servicios'); toggleMenu()" class="font-medium text-lg py-2 w-full text-center active:bg-primary/10 transition-colors text-secondary">Servicios</button>
-            <button onclick="scrollToSection('nosotros'); toggleMenu()" class="font-medium text-lg py-2 w-full text-center active:bg-primary/10 transition-colors text-secondary">Nosotros</button>
-            <button onclick="scrollToSection('portafolio'); toggleMenu()" class="font-medium text-lg py-2 w-full text-center active:bg-primary/10 transition-colors text-secondary">Portafolio</button>
-            <button onclick="scrollToSection('contacto'); toggleMenu()" class="font-medium text-lg py-2 w-full text-center active:bg-primary/10 transition-colors text-secondary">Contacto</button>
+        <!-- Cambios: bg-secondary (Azul Oscuro), text-white, transición de opacidad y transformación -->
+        <div id="mobileMenu" class="absolute top-full left-0 w-full shadow-lg border-t border-white/10 py-6 flex flex-col items-center space-y-6 bg-secondary z-40 transition-all duration-300 ease-in-out transform origin-top opacity-0 -translate-y-4 pointer-events-none">
+            <button onclick="scrollToSection('hero'); toggleMenu()" class="font-medium text-lg py-2 w-full text-center hover:bg-primary/10 transition-colors text-white">Inicio</button>
+            <button onclick="scrollToSection('servicios'); toggleMenu()" class="font-medium text-lg py-2 w-full text-center hover:bg-primary/10 transition-colors text-white">Servicios</button>
+            <button onclick="scrollToSection('nosotros'); toggleMenu()" class="font-medium text-lg py-2 w-full text-center hover:bg-primary/10 transition-colors text-white">Nosotros</button>
+            <button onclick="scrollToSection('portafolio'); toggleMenu()" class="font-medium text-lg py-2 w-full text-center hover:bg-primary/10 transition-colors text-white">Portafolio</button>
+            <button onclick="scrollToSection('contacto'); toggleMenu()" class="font-medium text-lg py-2 w-full text-center hover:bg-primary/10 transition-colors text-white">Contacto</button>
             
             <a href="https://wa.me/573103498227?text=%C2%A1Hola!%20Quiero%20cotizar%20un%20proyecto" 
                class="text-white px-8 py-3 rounded-full font-bold shadow-lg bg-whatsapp btn-whatsapp">
@@ -418,55 +420,84 @@
         // Inicializar Iconos Lucide
         lucide.createIcons();
 
-        // Funcionalidad del Navbar (Scroll effect)
+        // Variables para el Navbar y Menú
         const navbar = document.getElementById('navbar');
         const desktopMenuButtons = document.querySelectorAll('#desktopMenuLinks button');
         const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        const fallbackLogoText = document.getElementById('fallbackLogoText');
+        
+        let isMenuOpen = false;
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                // Estado: Scrolled (Fondo Azul Oscuro)
+        // Función para actualizar el estilo del navbar
+        function updateNavbarStyle() {
+            // Si el scroll > 50 O si el menú móvil está abierto -> Fondo Azul Oscuro
+            if (window.scrollY > 50 || isMenuOpen) {
+                // Estado: Fondo Azul Oscuro
                 navbar.classList.add('shadow-md', 'py-2');
                 navbar.classList.remove('bg-transparent', 'py-4');
                 navbar.style.backgroundColor = '#053056'; // Azul Oscuro de la marca
                 
-                // Cambiar color de texto de botones a blanco
+                // Texto de botones a blanco
                 desktopMenuButtons.forEach(btn => {
                     btn.classList.remove('text-secondary');
                     btn.classList.add('text-white');
                 });
+                
+                // Icono móvil a blanco
                 mobileMenuButton.style.color = '#FFFFFF';
+                
+                // Texto alternativo del logo (si la imagen falla) a blanco
+                if(fallbackLogoText) fallbackLogoText.style.color = '#FFFFFF';
 
             } else {
-                // Estado: Top (Transparente)
+                // Estado: Fondo Transparente (Solo si menú cerrado y arriba)
                 navbar.classList.remove('shadow-md', 'py-2');
                 navbar.classList.add('bg-transparent', 'py-4');
                 navbar.style.backgroundColor = 'transparent';
                 
-                // Cambiar color de texto de botones al original (Azul Oscuro)
+                // Texto de botones al original (Azul Oscuro)
                 desktopMenuButtons.forEach(btn => {
                     btn.classList.remove('text-white');
                     btn.classList.add('text-secondary');
                 });
+                
+                // Icono móvil a Azul Oscuro
                 mobileMenuButton.style.color = '#053056';
+                
+                // Texto alternativo del logo a Azul Oscuro
+                if(fallbackLogoText) fallbackLogoText.style.color = '#053056';
             }
-        });
+        }
 
-        // Funcionalidad del Menú Móvil
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menuIcon = document.getElementById('menuIcon');
-        let isMenuOpen = false;
+        // Listener de Scroll
+        window.addEventListener('scroll', updateNavbarStyle);
 
+        // Funcionalidad del Menú Móvil con Transición
         function toggleMenu() {
             isMenuOpen = !isMenuOpen;
+            
+            // 1. Alternar iconos
             if (isMenuOpen) {
-                mobileMenu.classList.remove('hidden');
                 menuIcon.setAttribute('data-lucide', 'x');
+                
+                // Abrir: Quitar clases de ocultamiento y agregar de visibilidad
+                mobileMenu.classList.remove('opacity-0', '-translate-y-4', 'pointer-events-none');
+                mobileMenu.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
             } else {
-                mobileMenu.classList.add('hidden');
                 menuIcon.setAttribute('data-lucide', 'menu');
+                
+                // Cerrar: Agregar clases de ocultamiento
+                mobileMenu.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
+                mobileMenu.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
             }
-            lucide.createIcons(); // Re-renderizar iconos al cambiar
+            
+            // 2. Actualizar estilo del navbar (para que se ponga azul si abrimos el menú arriba)
+            updateNavbarStyle();
+            
+            // 3. Re-renderizar iconos
+            lucide.createIcons();
         }
 
         // Scroll Suave
