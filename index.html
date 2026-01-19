@@ -94,9 +94,14 @@
                 </a>
             </div>
 
-            <!-- Mobile Menu Button -->
+            <!-- Mobile Menu Button (SOLUCIÓN: Contenedores separados para Menu y X) -->
             <button class="md:hidden p-2 text-secondary transition-colors" onclick="toggleMenu()" aria-label="Abrir menú" id="mobileMenuButton">
-                <i data-lucide="menu" id="menuIcon"></i>
+                <span id="iconMenuContainer">
+                    <i data-lucide="menu"></i>
+                </span>
+                <span id="iconCloseContainer" class="hidden">
+                    <i data-lucide="x"></i>
+                </span>
             </button>
         </div>
 
@@ -425,7 +430,8 @@
         const desktopMenuButtons = document.querySelectorAll('#desktopMenuLinks button');
         const mobileMenuButton = document.getElementById('mobileMenuButton');
         const mobileMenu = document.getElementById('mobileMenu');
-        const menuIcon = document.getElementById('menuIcon');
+        const menuIconContainer = document.getElementById('iconMenuContainer');
+        const closeIconContainer = document.getElementById('iconCloseContainer');
         const fallbackLogoText = document.getElementById('fallbackLogoText');
         
         let isMenuOpen = false;
@@ -478,15 +484,17 @@
         function toggleMenu() {
             isMenuOpen = !isMenuOpen;
             
-            // 1. Alternar iconos
+            // 1. Alternar iconos usando contenedores (Fix para Lucide DOM replacement)
             if (isMenuOpen) {
-                menuIcon.setAttribute('data-lucide', 'x');
+                menuIconContainer.classList.add('hidden');
+                closeIconContainer.classList.remove('hidden');
                 
                 // Abrir: Quitar clases de ocultamiento y agregar de visibilidad
                 mobileMenu.classList.remove('opacity-0', '-translate-y-4', 'pointer-events-none');
                 mobileMenu.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
             } else {
-                menuIcon.setAttribute('data-lucide', 'menu');
+                menuIconContainer.classList.remove('hidden');
+                closeIconContainer.classList.add('hidden');
                 
                 // Cerrar: Agregar clases de ocultamiento
                 mobileMenu.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
@@ -495,9 +503,6 @@
             
             // 2. Actualizar estilo del navbar (para que se ponga azul si abrimos el menú arriba)
             updateNavbarStyle();
-            
-            // 3. Re-renderizar iconos
-            lucide.createIcons();
         }
 
         // Scroll Suave
