@@ -128,7 +128,7 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <section id="hero" class="relative pt-24 pb-16 lg:pt-36 lg:pb-32 overflow-hidden min-h-screen flex items-center">
+    <section id="hero" class="relative pt-24 pb-24 lg:pt-36 lg:pb-32 overflow-hidden min-h-screen flex items-center">
         <div class="absolute inset-0 z-0 bg-gradient-to-br from-background to-[#eef6f9]"></div>
 
         <div class="container mx-auto px-4 md:px-6 relative z-10 flex flex-col lg:flex-row items-center">
@@ -154,66 +154,60 @@
             </div>
             
             <!-- Columna Imagen y Efectos -->
-            <div class="lg:w-1/2 w-full relative min-h-[500px] flex items-center justify-center">
+            <div class="lg:w-1/2 w-full relative min-h-[500px] flex items-center justify-center mt-12 lg:mt-0">
                 
-                <!-- CAPA 1: ÓRBITAS Y BOLITAS GIRATORIAS -->
+                <!-- CAPA 1: ÓRBITAS Y BOLITAS GIRATORIAS (Ajustadas para móvil) -->
                 <div class="absolute inset-0 z-0 pointer-events-none flex items-center justify-center">
-                    <!-- Órbita 1 -->
-                    <div class="absolute w-[350px] h-[350px] md:w-[550px] md:h-[550px] border border-primary/10 rounded-full animate-orbit" style="--duration: 25s;">
-                        <div class="absolute -top-2 left-1/2 w-4 h-4 bg-primary rounded-full shadow-[0_0_15px_rgba(0,173,239,0.5)] dot-pulse"></div>
+                    <div class="absolute w-[300px] h-[300px] md:w-[550px] md:h-[550px] border border-primary/5 md:border-primary/10 rounded-full animate-orbit" style="--duration: 25s;">
+                        <div class="absolute -top-1 left-1/2 w-3 md:w-4 h-3 md:h-4 bg-primary rounded-full shadow-lg dot-pulse"></div>
                     </div>
-                    <!-- Órbita 2 -->
-                    <div class="absolute w-[300px] h-[300px] md:w-[450px] md:h-[450px] border border-secondary/10 rounded-full animate-orbit rotate-[35deg]" style="--duration: 18s; animation-direction: reverse;">
-                        <div class="absolute top-1/2 -right-1.5 w-3 h-3 bg-secondary rounded-full shadow-lg dot-pulse" style="animation-delay: -1s;"></div>
-                    </div>
-                    <!-- Órbita 3 -->
-                    <div class="absolute w-[260px] h-[260px] md:w-[350px] md:h-[350px] border border-whatsapp/10 rounded-full animate-orbit -rotate-[20deg]" style="--duration: 12s;">
-                        <div class="absolute bottom-10 left-10 w-2.5 h-2.5 bg-whatsapp rounded-full shadow-lg dot-pulse" style="animation-delay: -2s;"></div>
+                    <div class="absolute w-[260px] h-[260px] md:w-[450px] md:h-[450px] border border-secondary/5 md:border-secondary/10 rounded-full animate-orbit rotate-[35deg]" style="--duration: 18s; animation-direction: reverse;">
+                        <div class="absolute top-1/2 -right-1 w-2.5 md:w-3 h-2.5 md:h-3 bg-secondary rounded-full shadow-lg dot-pulse"></div>
                     </div>
                 </div>
 
                 <!-- CAPA 2: FOTO DE JEISSON -->
-                <div class="relative z-10 w-60 md:w-80 transition-transform duration-700 hover:scale-[1.03]">
-                    <div class="rounded-[3rem] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.18)] border-4 border-white bg-white">
+                <div class="relative z-10 w-52 md:w-80 transition-transform duration-700 hover:scale-[1.03]">
+                    <div class="rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] border-4 border-white bg-white">
                         <img src="jeissonfeliz.png" alt="Jeisson - ABC Ideas" class="w-full h-auto object-cover">
                     </div>
 
-                    <!-- CAPA 3: GLOBOS DE SERVICIOS FLOTANTES -->
+                    <!-- CAPA 3: GLOBOS DE SERVICIOS FLOTANTES (Posicionamiento Responsive Optimizado) -->
                     
                     <!-- 1. Litográfica -->
-                    <div class="absolute -top-12 -left-16 md:-top-20 md:-left-24 animate-float z-30 flex items-center gap-3 bg-white/95 backdrop-blur-md p-3 md:p-4 rounded-2xl shadow-xl border border-primary/10">
-                        <div class="bg-primary/10 p-2 rounded-xl text-primary"><i data-lucide="layers" class="w-5 h-5"></i></div>
-                        <span class="text-xs md:text-sm font-bold text-secondary whitespace-nowrap">Impresión litográfica</span>
+                    <div class="absolute -top-10 -left-10 md:-top-20 md:-left-24 animate-float z-30 flex items-center gap-2 md:gap-3 bg-white/95 backdrop-blur-md p-2 md:p-4 rounded-xl md:rounded-2xl shadow-xl border border-primary/10 scale-75 md:scale-100">
+                        <div class="bg-primary/10 p-1.5 md:p-2 rounded-lg md:rounded-xl text-primary"><i data-lucide="layers" class="w-4 h-4 md:w-5 md:h-5"></i></div>
+                        <span class="text-[10px] md:text-sm font-bold text-secondary whitespace-nowrap">Impresión litográfica</span>
                     </div>
 
                     <!-- 2. Stands -->
-                    <div class="absolute top-6 -right-16 md:top-10 md:-right-28 animate-float delay-1 z-30 flex items-center gap-3 bg-white/95 backdrop-blur-md p-3 md:p-4 rounded-2xl shadow-xl border border-primary/10">
-                        <div class="bg-primary/10 p-2 rounded-xl text-primary"><i data-lucide="store" class="w-5 h-5"></i></div>
-                        <span class="text-xs md:text-sm font-bold text-secondary whitespace-nowrap">Stands ferias</span>
+                    <div class="absolute top-2 -right-12 md:top-10 md:-right-28 animate-float delay-1 z-30 flex items-center gap-2 md:gap-3 bg-white/95 backdrop-blur-md p-2 md:p-4 rounded-xl md:rounded-2xl shadow-xl border border-primary/10 scale-75 md:scale-100">
+                        <div class="bg-primary/10 p-1.5 md:p-2 rounded-lg md:rounded-xl text-primary"><i data-lucide="store" class="w-4 h-4 md:w-5 md:h-5"></i></div>
+                        <span class="text-[10px] md:text-sm font-bold text-secondary whitespace-nowrap">Stands ferias</span>
                     </div>
 
                     <!-- 3. Libros -->
-                    <div class="absolute top-1/2 -left-24 md:-left-36 animate-float delay-2 z-30 flex items-center gap-3 bg-white/95 backdrop-blur-md p-3 md:p-4 rounded-2xl shadow-xl border border-primary/10">
-                        <div class="bg-primary/10 p-2 rounded-xl text-primary"><i data-lucide="book-open" class="w-5 h-5"></i></div>
-                        <span class="text-xs md:text-sm font-bold text-secondary whitespace-nowrap">Impresión libros</span>
+                    <div class="absolute top-1/2 -left-16 md:-left-36 animate-float delay-2 z-30 flex items-center gap-2 md:gap-3 bg-white/95 backdrop-blur-md p-2 md:p-4 rounded-xl md:rounded-2xl shadow-xl border border-primary/10 scale-75 md:scale-100">
+                        <div class="bg-primary/10 p-1.5 md:p-2 rounded-lg md:rounded-xl text-primary"><i data-lucide="book-open" class="w-4 h-4 md:w-5 md:h-5"></i></div>
+                        <span class="text-[10px] md:text-sm font-bold text-secondary whitespace-nowrap">Impresión libros</span>
                     </div>
 
                     <!-- 4. Digital -->
-                    <div class="absolute bottom-1/4 -right-16 md:-right-28 animate-float delay-3 z-30 flex items-center gap-3 bg-white/95 backdrop-blur-md p-3 md:p-4 rounded-2xl shadow-xl border border-primary/10">
-                        <div class="bg-primary/10 p-2 rounded-xl text-primary"><i data-lucide="printer" class="w-5 h-5"></i></div>
-                        <span class="text-xs md:text-sm font-bold text-secondary whitespace-nowrap">Impresión digital</span>
+                    <div class="absolute bottom-1/4 -right-14 md:-right-28 animate-float delay-3 z-30 flex items-center gap-2 md:gap-3 bg-white/95 backdrop-blur-md p-2 md:p-4 rounded-xl md:rounded-2xl shadow-xl border border-primary/10 scale-75 md:scale-100">
+                        <div class="bg-primary/10 p-1.5 md:p-2 rounded-lg md:rounded-xl text-primary"><i data-lucide="printer" class="w-4 h-4 md:w-5 md:h-5"></i></div>
+                        <span class="text-[10px] md:text-sm font-bold text-secondary whitespace-nowrap">Impresión digital</span>
                     </div>
 
-                    <!-- 5. Material POP -->
-                    <div class="absolute -bottom-8 left-0 md:-bottom-14 md:-left-12 animate-float z-30 flex items-center gap-3 bg-white/95 backdrop-blur-md p-3 md:p-4 rounded-2xl shadow-xl border border-primary/10">
-                        <div class="bg-primary/10 p-2 rounded-xl text-primary"><i data-lucide="megaphone" class="w-5 h-5"></i></div>
-                        <span class="text-xs md:text-sm font-bold text-secondary whitespace-nowrap">Material publicitario</span>
+                    <!-- 5. Material Publicitario -->
+                    <div class="absolute -bottom-10 -left-6 md:-bottom-14 md:-left-12 animate-float z-30 flex items-center gap-2 md:gap-3 bg-white/95 backdrop-blur-md p-2 md:p-4 rounded-xl md:rounded-2xl shadow-xl border border-primary/10 scale-75 md:scale-100">
+                        <div class="bg-primary/10 p-1.5 md:p-2 rounded-lg md:rounded-xl text-primary"><i data-lucide="megaphone" class="w-4 h-4 md:w-5 md:h-5"></i></div>
+                        <span class="text-[10px] md:text-sm font-bold text-secondary whitespace-nowrap">Material publicitario</span>
                     </div>
 
                     <!-- 6. Diseño -->
-                    <div class="absolute -bottom-2 -right-8 md:-bottom-4 md:-right-20 animate-float delay-1 z-30 flex items-center gap-3 bg-white/95 backdrop-blur-md p-3 md:p-4 rounded-2xl shadow-xl border border-primary/10">
-                        <div class="bg-primary/10 p-2 rounded-xl text-primary"><i data-lucide="monitor" class="w-5 h-5"></i></div>
-                        <span class="text-xs md:text-sm font-bold text-secondary whitespace-nowrap">Diseño gráfico</span>
+                    <div class="absolute -bottom-6 -right-6 md:-bottom-4 md:-right-20 animate-float delay-1 z-30 flex items-center gap-2 md:gap-3 bg-white/95 backdrop-blur-md p-2 md:p-4 rounded-xl md:rounded-2xl shadow-xl border border-primary/10 scale-75 md:scale-100">
+                        <div class="bg-primary/10 p-1.5 md:p-2 rounded-lg md:rounded-xl text-primary"><i data-lucide="monitor" class="w-4 h-4 md:w-5 md:h-5"></i></div>
+                        <span class="text-[10px] md:text-sm font-bold text-secondary whitespace-nowrap">Diseño gráfico</span>
                     </div>
                 </div>
             </div>
@@ -232,31 +226,28 @@
                 <h3 class="text-3xl md:text-5xl font-extrabold mb-6 text-secondary tracking-tight">Todo lo que tu empresa necesita para destacar</h3>
             </div>
 
-            <!-- Grid Servicios Principales -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-28">
-                <div class="p-10 rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group bg-white border border-gray-100">
-                    <div class="mb-8 w-20 h-20 rounded-3xl flex items-center justify-center bg-[#e0f7ff] text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                        <i data-lucide="layout" class="w-10 h-10"></i>
+                <div class="p-8 md:p-10 rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group bg-white border border-gray-100">
+                    <div class="mb-8 w-16 h-16 md:w-20 md:h-20 rounded-3xl flex items-center justify-center bg-[#e0f7ff] text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                        <i data-lucide="layout" class="w-8 h-8 md:w-10 md:h-10"></i>
                     </div>
                     <h3 class="text-2xl md:text-3xl font-bold mb-5 text-secondary">Material POP y promocional</h3>
-                    <p class="mb-8 opacity-70 leading-relaxed text-lg text-gray-600">Objetos que llevan tu marca a todas partes. Fidelizamos a tus clientes con detalles útiles que dejan huella.</p>
+                    <p class="mb-8 opacity-70 leading-relaxed text-base md:text-lg text-gray-600">Objetos que llevan tu marca a todas partes. Fidelizamos a tus clientes con detalles útiles que dejan huella.</p>
                     <ul class="space-y-4">
-                        <li class="flex items-center gap-4 text-lg opacity-80 font-medium"><i data-lucide="check-circle" class="text-primary w-5 h-5"></i> Agendas y esferos premium</li>
-                        <li class="flex items-center gap-4 text-lg opacity-80 font-medium"><i data-lucide="check-circle" class="text-primary w-5 h-5"></i> Mugs, llaveros y accesorios</li>
-                        <li class="flex items-center gap-4 text-lg opacity-80 font-medium"><i data-lucide="check-circle" class="text-primary w-5 h-5"></i> Kits publicitarios integrales</li>
+                        <li class="flex items-center gap-4 text-base md:text-lg opacity-80 font-medium"><i data-lucide="check-circle" class="text-primary w-5 h-5"></i> Agendas y esferos premium</li>
+                        <li class="flex items-center gap-4 text-base md:text-lg opacity-80 font-medium"><i data-lucide="check-circle" class="text-primary w-5 h-5"></i> Mugs, llaveros y accesorios</li>
                     </ul>
                 </div>
 
-                <div class="p-10 rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group bg-white border border-gray-100">
-                    <div class="mb-8 w-20 h-20 rounded-3xl flex items-center justify-center bg-[#e0f7ff] text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                        <i data-lucide="printer" class="w-10 h-10"></i>
+                <div class="p-8 md:p-10 rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group bg-white border border-gray-100">
+                    <div class="mb-8 w-16 h-16 md:w-20 md:h-20 rounded-3xl flex items-center justify-center bg-[#e0f7ff] text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                        <i data-lucide="printer" class="w-8 h-8 md:w-10 md:h-10"></i>
                     </div>
                     <h3 class="text-2xl md:text-3xl font-bold mb-5 text-secondary">Impresión gran formato y avisos</h3>
-                    <p class="mb-8 opacity-70 leading-relaxed text-lg text-gray-600">Hazte notar desde cualquier distancia. Soluciones visuales de gran escala para fachadas y eventos.</p>
+                    <p class="mb-8 opacity-70 leading-relaxed text-base md:text-lg text-gray-600">Hazte notar desde cualquier distancia. Soluciones visuales de gran escala para fachadas y eventos.</p>
                     <ul class="space-y-4">
-                        <li class="flex items-center gap-4 text-lg opacity-80 font-medium"><i data-lucide="check-circle" class="text-primary w-5 h-5"></i> Avisos en acrílico, metal y lona</li>
-                        <li class="flex items-center gap-4 text-lg opacity-80 font-medium"><i data-lucide="check-circle" class="text-primary w-5 h-5"></i> Vinilos decorativos y microperforados</li>
-                        <li class="flex items-center gap-4 text-lg opacity-80 font-medium"><i data-lucide="check-circle" class="text-primary w-5 h-5"></i> Branding de oficinas y locales</li>
+                        <li class="flex items-center gap-4 text-base md:text-lg opacity-80 font-medium"><i data-lucide="check-circle" class="text-primary w-5 h-5"></i> Avisos en acrílico, metal y lona</li>
+                        <li class="flex items-center gap-4 text-base md:text-lg opacity-80 font-medium"><i data-lucide="check-circle" class="text-primary w-5 h-5"></i> Vinilos decorativos y branding</li>
                     </ul>
                 </div>
             </div>
@@ -265,71 +256,71 @@
             <div id="combos" class="mt-12 pt-20 border-t border-secondary/10">
                 <div class="text-center mb-16">
                     <h3 class="text-3xl md:text-5xl font-extrabold mb-5 text-secondary tracking-tight">Paquetes promocionales</h3>
-                    <p class="text-lg opacity-70 max-w-2xl mx-auto text-gray-600">Soluciones integrales diseñadas para máxima visibilidad. ¡Selecciona uno para cotizar!</p>
+                    <p class="text-lg opacity-70 max-w-2xl mx-auto text-gray-600">Soluciones integrales diseñadas para máxima visibilidad.</p>
                 </div>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
                     <!-- Paquete 1 -->
                     <div class="group bg-white rounded-[2.5rem] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-50 flex flex-col">
-                        <div class="bg-primary/5 p-6 text-center border-b border-primary/5 min-h-[90px] flex items-center justify-center">
-                            <h4 class="font-bold text-secondary text-sm md:text-base leading-tight">Combo 1 - Tarjetas - Volantes - Pendones</h4>
+                        <div class="bg-primary/5 p-4 md:p-6 text-center border-b border-primary/5 min-h-[80px] md:min-h-[90px] flex items-center justify-center">
+                            <h4 class="font-bold text-secondary text-sm md:text-base leading-tight px-2">Combo 1 - Tarjetas - Volantes - Pendones</h4>
                         </div>
-                        <a href="https://wa.me/573103498227?text=Hola!%20Me%20interesa%20el%20Combo%201" target="_blank" class="block relative h-72 overflow-hidden">
+                        <a href="https://wa.me/573103498227?text=Hola!%20Me%20interesa%20el%20Combo%201" target="_blank" class="block relative h-64 md:h-72 overflow-hidden">
                              <img src="promocional1.jpeg" alt="Combo 1" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700">
                              <div class="absolute inset-0 bg-secondary/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
-                                 <span class="bg-whatsapp text-white font-bold px-6 py-3 rounded-full shadow-2xl flex items-center gap-2 text-lg"><i data-lucide="message-circle" class="w-5 h-5"></i> Cotizar</span>
+                                 <span class="bg-whatsapp text-white font-bold px-5 md:px-6 py-2 md:py-3 rounded-full shadow-2xl flex items-center gap-2 text-base md:text-lg"><i data-lucide="message-circle" class="w-5 h-5"></i> Cotizar</span>
                              </div>
                         </a>
-                        <div class="p-8 text-center mt-auto">
-                            <p class="text-sm font-medium text-gray-600 leading-relaxed italic">🔥 El “Arrancador: Ideal si vas a una feria o estás inaugurando</p>
+                        <div class="p-6 md:p-8 text-center mt-auto">
+                            <p class="text-xs md:text-sm font-medium text-gray-600 italic">🔥 El “Arrancador: Ideal si vas a una feria o estás inaugurando</p>
                         </div>
                     </div>
 
                     <!-- Paquete 2 -->
                     <div class="group bg-white rounded-[2.5rem] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-50 flex flex-col">
-                        <div class="bg-primary/5 p-6 text-center border-b border-primary/5 min-h-[90px] flex items-center justify-center">
-                            <h4 class="font-bold text-secondary text-sm md:text-base leading-tight">Combo 2 - Tarjetas - Afiches A4 - Stickers</h4>
+                        <div class="bg-primary/5 p-4 md:p-6 text-center border-b border-primary/5 min-h-[80px] md:min-h-[90px] flex items-center justify-center">
+                            <h4 class="font-bold text-secondary text-sm md:text-base leading-tight px-2">Combo 2 - Tarjetas - Afiches A4 - Stickers</h4>
                         </div>
-                        <a href="https://wa.me/573103498227?text=Hola!%20Me%20interesa%20el%20Combo%202" target="_blank" class="block relative h-72 overflow-hidden">
+                        <a href="https://wa.me/573103498227?text=Hola!%20Me%20interesa%20el%20Combo%202" target="_blank" class="block relative h-64 md:h-72 overflow-hidden">
                              <img src="promocional2.jpeg" alt="Combo 2" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700">
-                             <div class="absolute inset-0 bg-secondary/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
-                                 <span class="bg-whatsapp text-white font-bold px-6 py-3 rounded-full shadow-2xl flex items-center gap-2 text-lg"><i data-lucide="message-circle" class="w-5 h-5"></i> Cotizar</span>
+                             <div class="absolute inset-0 bg-secondary/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                 <span class="bg-whatsapp text-white font-bold px-5 md:px-6 py-2 md:py-3 rounded-full shadow-2xl flex items-center gap-2 text-base md:text-lg"><i data-lucide="message-circle" class="w-5 h-5"></i> Cotizar</span>
                              </div>
                         </a>
-                        <div class="p-8 text-center mt-auto">
-                            <p class="text-sm font-medium text-gray-600 leading-relaxed italic">🚀 El “Detallista: Perfecto para retail y puntos de venta.</p>
+                        <div class="p-6 md:p-8 text-center mt-auto">
+                            <p class="text-xs md:text-sm font-medium text-gray-600 italic">🚀 El “Detallista: Perfecto para retail y puntos de venta.</p>
                         </div>
                     </div>
 
                     <!-- Paquete 3 -->
                     <div class="group bg-white rounded-[2.5rem] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-50 flex flex-col">
-                        <div class="bg-primary/5 p-6 text-center border-b border-primary/5 min-h-[90px] flex items-center justify-center">
-                            <h4 class="font-bold text-secondary text-sm md:text-base leading-tight">Combo 3 - Gorras - Camisas - Manillas</h4>
+                        <div class="bg-primary/5 p-4 md:p-6 text-center border-b border-primary/5 min-h-[80px] md:min-h-[90px] flex items-center justify-center">
+                            <h4 class="font-bold text-secondary text-sm md:text-base leading-tight px-2">Combo 3 - Gorras - Camisas - Manillas</h4>
                         </div>
-                        <a href="https://wa.me/573103498227?text=Hola!%20Me%20interesa%20el%20Combo%203" target="_blank" class="block relative h-72 overflow-hidden">
+                        <a href="https://wa.me/573103498227?text=Hola!%20Me%20interesa%20el%20Combo%203" target="_blank" class="block relative h-64 md:h-72 overflow-hidden">
                              <img src="promocional3.jpeg" alt="Combo 3" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700">
-                             <div class="absolute inset-0 bg-secondary/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
-                                 <span class="bg-whatsapp text-white font-bold px-6 py-3 rounded-full shadow-2xl flex items-center gap-2 text-lg"><i data-lucide="message-circle" class="w-5 h-5"></i> Cotizar</span>
+                             <div class="absolute inset-0 bg-secondary/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                 <span class="bg-whatsapp text-white font-bold px-5 md:px-6 py-2 md:py-3 rounded-full shadow-2xl flex items-center gap-2 text-base md:text-lg"><i data-lucide="message-circle" class="w-5 h-5"></i> Cotizar</span>
                              </div>
                         </a>
-                        <div class="p-8 text-center mt-auto">
-                            <p class="text-sm font-medium text-gray-600 leading-relaxed italic">👕 El “Corporativo: Convierte a tu equipo en embajadores.</p>
+                        <div class="p-6 md:p-8 text-center mt-auto">
+                            <p class="text-xs md:text-sm font-medium text-gray-600 italic">👕 El “Corporativo: Convierte a tu equipo en embajadores.</p>
                         </div>
                     </div>
 
                     <!-- Paquete 4 -->
                     <div class="group bg-white rounded-[2.5rem] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-50 flex flex-col">
-                        <div class="bg-primary/5 p-6 text-center border-b border-primary/5 min-h-[90px] flex items-center justify-center">
-                            <h4 class="font-bold text-secondary text-sm md:text-base leading-tight">Combo 4 - 10 Pendones - Pasacalles</h4>
+                        <div class="bg-primary/5 p-4 md:p-6 text-center border-b border-primary/5 min-h-[80px] md:min-h-[90px] flex items-center justify-center">
+                            <h4 class="font-bold text-secondary text-sm md:text-base leading-tight px-2">Combo 4 - 10 Pendones - Pasacalles</h4>
                         </div>
-                        <a href="https://wa.me/573103498227?text=Hola!%20Me%20interesa%20el%20Combo%204" target="_blank" class="block relative h-72 overflow-hidden">
+                        <a href="https://wa.me/573103498227?text=Hola!%20Me%20interesa%20el%20Combo%204" target="_blank" class="block relative h-64 md:h-72 overflow-hidden">
                              <img src="promocional4.jpeg" alt="Combo 4" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700">
-                             <div class="absolute inset-0 bg-secondary/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
-                                 <span class="bg-whatsapp text-white font-bold px-6 py-3 rounded-full shadow-2xl flex items-center gap-2 text-lg"><i data-lucide="message-circle" class="w-5 h-5"></i> Cotizar</span>
+                             <div class="absolute inset-0 bg-secondary/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                 <span class="bg-whatsapp text-white font-bold px-5 md:px-6 py-2 md:py-3 rounded-full shadow-2xl flex items-center gap-2 text-base md:text-lg"><i data-lucide="message-circle" class="w-5 h-5"></i> Cotizar</span>
                              </div>
                         </a>
-                        <div class="p-8 text-center mt-auto">
-                            <p class="text-sm font-medium text-gray-600 leading-relaxed italic">📢 El “Megáfono: Visibilidad masiva para campañas grandes.</p>
+                        <div class="p-6 md:p-8 text-center mt-auto">
+                            <p class="text-xs md:text-sm font-medium text-gray-600 italic">📢 El “Megáfono: Visibilidad masiva para campañas grandes.</p>
                         </div>
                     </div>
                 </div>
@@ -351,42 +342,38 @@
                 </div>
                 <div class="w-full md:w-1/2">
                     <h2 class="text-3xl md:text-5xl font-extrabold mb-8 text-secondary tracking-tight">30 años de legado visual en Colombia</h2>
-                    <p class="mb-8 leading-relaxed opacity-70 text-lg text-gray-600 italic font-medium border-l-4 border-primary pl-6">Fundada en Bogotá en 1993, ABC Ideas es el socio estratégico que conecta a las empresas con su público objetivo.</p>
+                    <p class="mb-8 leading-relaxed opacity-70 text-base md:text-lg text-gray-600 italic font-medium border-l-4 border-primary pl-6">Fundada en Bogotá en 1993, ABC Ideas es el socio estratégico que conecta a las empresas con su público objetivo.</p>
                     <div class="space-y-6">
                         <div class="flex items-start gap-5 p-6 bg-white/50 rounded-3xl border border-primary/10 hover:bg-white transition-all shadow-sm">
                             <div class="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 bg-[#e0f7ff] text-primary"><i data-lucide="check-circle" class="w-6 h-6"></i></div>
-                            <div><p class="font-bold text-secondary text-xl">Legado comprobado</p><p class="text-sm opacity-60">Tres décadas anticipando las necesidades del mercado publicitario nacional.</p></div>
-                        </div>
-                        <div class="flex items-start gap-5 p-6 bg-white/50 rounded-3xl border border-primary/10 hover:bg-white transition-all shadow-sm">
-                            <div class="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 bg-[#e0f7ff] text-primary"><i data-lucide="award" class="w-6 h-6"></i></div>
-                            <div><p class="font-bold text-secondary text-xl">Calidad Superior</p><p class="text-sm opacity-60">Ejecución impecable respaldada por tecnología de impresión de vanguardia.</p></div>
+                            <div><p class="font-bold text-secondary text-xl">Legado comprobado</p><p class="text-sm opacity-60">Tres décadas anticipando las necesidades del mercado publicitario.</p></div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- CONTACTO INTEGRADO -->
-            <div id="contacto" class="bg-secondary rounded-[4rem] shadow-2xl p-10 md:p-20 text-white relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>
-                <h3 class="text-3xl md:text-5xl font-bold text-center mb-16 relative z-10 tracking-tight">Encuéntranos aquí</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10 text-center">
-                    <a href="https://maps.app.goo.gl/JAPEETGFnNZt8MFA7" target="_blank" class="flex flex-col items-center text-center p-10 rounded-[3rem] bg-white/5 hover:bg-white/10 transition-all border border-white/10 group">
-                        <div class="w-16 h-16 mb-8 text-white bg-primary rounded-3xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><i data-lucide="map-pin" class="w-8 h-8"></i></div>
-                        <h4 class="font-bold mb-2 text-2xl">Ubicación</h4>
+            <div id="contacto" class="bg-secondary rounded-[3rem] md:rounded-[4rem] shadow-2xl p-8 md:p-20 text-white relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-primary/10 rounded-full blur-[80px] md:blur-[120px]"></div>
+                <h3 class="text-3xl md:text-5xl font-bold text-center mb-12 md:mb-16 relative z-10 tracking-tight">Encuéntranos aquí</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 relative z-10 text-center">
+                    <a href="https://maps.app.goo.gl/JAPEETGFnNZt8MFA7" target="_blank" class="flex flex-col items-center text-center p-8 md:p-10 rounded-[2.5rem] md:rounded-[3rem] bg-white/5 hover:bg-white/10 transition-all border border-white/10 group">
+                        <div class="w-14 h-14 md:w-16 md:h-16 mb-6 md:mb-8 text-white bg-primary rounded-2xl md:rounded-3xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><i data-lucide="map-pin" class="w-7 h-7 md:w-8 md:h-8"></i></div>
+                        <h4 class="font-bold mb-2 text-xl md:text-2xl">Ubicación</h4>
                         <p class="text-sm opacity-70">Carrera 9 #9-71, Bogotá, Colombia</p>
                     </a>
-                    <a href="mailto:abcideas72@gmail.com" class="flex flex-col items-center text-center p-10 rounded-[3rem] bg-white/5 hover:bg-white/10 transition-all border border-white/10 group">
-                        <div class="w-16 h-16 mb-8 text-white bg-primary rounded-3xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><i data-lucide="mail" class="w-8 h-8"></i></div>
-                        <h4 class="font-bold mb-2 text-2xl">Correo</h4>
+                    <a href="mailto:abcideas72@gmail.com" class="flex flex-col items-center text-center p-8 md:p-10 rounded-[2.5rem] md:rounded-[3rem] bg-white/5 hover:bg-white/10 transition-all border border-white/10 group">
+                        <div class="w-14 h-14 md:w-16 md:h-16 mb-6 md:mb-8 text-white bg-primary rounded-2xl md:rounded-3xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><i data-lucide="mail" class="w-7 h-7 md:w-8 md:h-8"></i></div>
+                        <h4 class="font-bold mb-2 text-xl md:text-2xl">Correo</h4>
                         <p class="text-sm opacity-70 break-all">abcideas72@gmail.com</p>
                     </a>
-                    <div class="flex flex-col items-center text-center p-10 rounded-[3rem] bg-white/5 border border-white/10 shadow-inner">
-                        <div class="w-16 h-16 mb-8 text-white bg-primary rounded-3xl flex items-center justify-center shadow-lg"><i data-lucide="share-2" class="w-8 h-8"></i></div>
-                        <h4 class="font-bold mb-8 text-2xl">Nuestras Redes</h4>
-                        <div class="flex gap-6">
-                            <a href="https://www.linkedin.com/company/abc-ideas/" target="_blank" class="p-4 bg-white/10 rounded-2xl hover:bg-primary transition-all"><i data-lucide="linkedin" class="w-6 h-6 text-white"></i></a>
-                            <a href="https://www.instagram.com/abcideas.publicidad" target="_blank" class="p-4 bg-white/10 rounded-2xl hover:bg-primary transition-all"><i data-lucide="instagram" class="w-6 h-6 text-white"></i></a>
-                            <a href="https://www.facebook.com/profile.php?id=61584008057301" target="_blank" class="p-4 bg-white/10 rounded-2xl hover:bg-primary transition-all"><i data-lucide="facebook" class="w-6 h-6 text-white"></i></a>
+                    <div class="flex flex-col items-center text-center p-8 md:p-10 rounded-[2.5rem] md:rounded-[3rem] bg-white/5 border border-white/10">
+                        <div class="w-14 h-14 md:w-16 md:h-16 mb-6 md:mb-8 text-white bg-primary rounded-2xl md:rounded-3xl flex items-center justify-center shadow-lg"><i data-lucide="share-2" class="w-7 h-7 md:w-8 md:h-8"></i></div>
+                        <h4 class="font-bold mb-6 md:mb-8 text-xl md:text-2xl">Nuestras Redes</h4>
+                        <div class="flex gap-4 md:gap-6">
+                            <a href="https://www.linkedin.com/company/abc-ideas/" target="_blank" class="p-3 md:p-4 bg-white/10 rounded-xl md:rounded-2xl hover:bg-primary transition-all"><i data-lucide="linkedin" class="w-5 h-5 md:w-6 md:h-6 text-white"></i></a>
+                            <a href="https://www.instagram.com/abcideas.publicidad" target="_blank" class="p-3 md:p-4 bg-white/10 rounded-xl md:rounded-2xl hover:bg-primary transition-all"><i data-lucide="instagram" class="w-5 h-5 md:w-6 md:h-6 text-white"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61584008057301" target="_blank" class="p-3 md:p-4 bg-white/10 rounded-xl md:rounded-2xl hover:bg-primary transition-all"><i data-lucide="facebook" class="w-5 h-5 md:w-6 md:h-6 text-white"></i></a>
                         </div>
                     </div>
                 </div>
@@ -398,36 +385,33 @@
     <section id="portafolio" class="py-24 text-white bg-[#011221]">
         <div class="container mx-auto px-4 md:px-6 text-center">
             <h2 class="text-2xl md:text-4xl font-bold mb-16 tracking-tight">Nuestros resultados hablan por nosotros</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 max-w-5xl mx-auto">
-                <div class="p-6 border-r border-white/5"><div class="text-5xl md:text-6xl font-extrabold text-primary mb-4">+500</div><div class="text-xs uppercase opacity-60 tracking-widest font-bold">Proyectos</div></div>
-                <div class="p-6 md:border-r border-white/5"><div class="text-5xl md:text-6xl font-extrabold text-primary mb-4">98%</div><div class="text-xs uppercase opacity-60 tracking-widest font-bold">Satisfacción</div></div>
-                <div class="p-6 border-r border-white/5"><div class="text-5xl md:text-6xl font-extrabold text-primary mb-4">30+</div><div class="text-xs uppercase opacity-60 tracking-widest font-bold">Años exp.</div></div>
-                <div class="p-6"><div class="text-5xl md:text-6xl font-extrabold text-primary mb-4">24h</div><div class="text-xs uppercase opacity-60 tracking-widest font-bold">Respuesta</div></div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-5xl mx-auto">
+                <div class="p-4 md:p-6 border-r border-white/5"><div class="text-4xl md:text-6xl font-extrabold text-primary mb-2 md:mb-4">+500</div><div class="text-[10px] md:text-xs uppercase opacity-60 tracking-widest font-bold">Proyectos</div></div>
+                <div class="p-4 md:p-6 md:border-r border-white/5"><div class="text-4xl md:text-6xl font-extrabold text-primary mb-2 md:mb-4">98%</div><div class="text-[10px] md:text-xs uppercase opacity-60 tracking-widest font-bold">Satisfacción</div></div>
+                <div class="p-4 md:p-6 border-r border-white/5"><div class="text-4xl md:text-6xl font-extrabold text-primary mb-2 md:mb-4">30+</div><div class="text-[10px] md:text-xs uppercase opacity-60 tracking-widest font-bold">Años exp.</div></div>
+                <div class="p-4 md:p-6"><div class="text-4xl md:text-6xl font-extrabold text-primary mb-2 md:mb-4">24h</div><div class="text-[10px] md:text-xs uppercase opacity-60 tracking-widest font-bold">Respuesta</div></div>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-16 border-t border-gray-200 bg-background"> 
+    <footer class="py-12 md:py-16 border-t border-gray-200 bg-background"> 
         <div class="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center text-center">
-            <div class="mb-10 md:mb-0">
-                <img src="ABCLogo.png" alt="ABC Ideas" class="h-12 mx-auto md:mx-0 mb-6">
+            <div class="mb-8 md:mb-0">
+                <img src="ABCLogo.png" alt="ABC Ideas" class="h-10 md:h-12 mx-auto md:mx-0 mb-4 md:mb-6">
                 <p class="text-sm opacity-50 font-medium">© 2026 ABC Ideas. <br class="md:hidden"/>Todos los derechos reservados.</p>
             </div>
-            <div class="flex gap-10 text-sm font-bold opacity-60">
+            <div class="flex gap-6 md:gap-10 text-sm font-bold opacity-60">
                 <a href="#" class="hover:text-primary transition uppercase tracking-wider">Privacidad</a>
                 <a href="#" class="hover:text-primary transition uppercase tracking-wider">Términos</a>
-                <a href="#" class="hover:text-primary transition uppercase tracking-wider">Soporte</a>
             </div>
         </div>
     </footer>
 
-    <!-- LOGICA DE NAVEGACION Y ANIMACION -->
+    <!-- Scripts -->
     <script>
-        // Inicializar Iconos
         lucide.createIcons();
 
-        // Elementos DOM
         const navbar = document.getElementById('navbar');
         const desktopMenuButtons = document.querySelectorAll('#desktopMenuLinks button');
         const mobileMenuButton = document.getElementById('mobileMenuButton');
@@ -437,10 +421,9 @@
         
         let isMenuOpen = false;
 
-        // Estilo dinámico del Navbar al Scroll
         function updateNavbarStyle() {
             if (window.scrollY > 50 || isMenuOpen) {
-                navbar.classList.add('shadow-2xl', 'py-2');
+                navbar.classList.add('shadow-xl', 'py-2');
                 navbar.classList.remove('py-4');
                 navbar.style.backgroundColor = '#053056';
                 desktopMenuButtons.forEach(btn => {
@@ -449,7 +432,7 @@
                 });
                 mobileMenuButton.style.color = '#FFFFFF';
             } else {
-                navbar.classList.remove('shadow-2xl', 'py-2');
+                navbar.classList.remove('shadow-xl', 'py-2');
                 navbar.classList.add('py-4');
                 navbar.style.backgroundColor = 'transparent';
                 desktopMenuButtons.forEach(btn => {
@@ -462,7 +445,6 @@
 
         window.addEventListener('scroll', updateNavbarStyle);
 
-        // Control de Menú Móvil
         function toggleMenu() {
             isMenuOpen = !isMenuOpen;
             if (isMenuOpen) {
@@ -479,7 +461,6 @@
             updateNavbarStyle();
         }
 
-        // Scroll Suave con Offset para Navbar
         function scrollToSection(id) {
             const element = document.getElementById(id);
             if (element) {
